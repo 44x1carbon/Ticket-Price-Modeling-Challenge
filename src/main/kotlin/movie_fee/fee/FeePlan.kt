@@ -11,6 +11,20 @@ class FeePlan(
         val planList: List<FeePlan> = listOf(
             FeePlan(Fee(1800U)) {
                 it.contains(CustomerClassification.ADULT)
+            },
+            FeePlan(Fee(1100U)) {
+                it.containsAll(listOf(
+                    CustomerClassification.ADULT,
+                    CustomerClassification.MEMBER,
+                    TimeClassification.WEEKDAY
+                ))
+            },
+            FeePlan(Fee(1500U)) {
+                it.containsAll(listOf(
+                    CustomerClassification.ADULT,
+                    CustomerClassification.MEMBER,
+                    TimeClassification.HOLIDAY
+                ))
             }
         )
     }
