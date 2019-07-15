@@ -4,6 +4,9 @@ import movie_fee.Customer
 import movie_fee.MembershipCard
 import movie_fee.StudentCard
 
+/**
+ * 顧客区分
+ */
 enum class CustomerClassification(
     val condition: (Customer) -> Boolean
 ): Classification {

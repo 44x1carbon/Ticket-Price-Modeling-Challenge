@@ -1,4 +1,6 @@
 package movie_fee.fee
 
-interface Classification {
-}
+/**
+ * 区分？
+ */
+interface Classification

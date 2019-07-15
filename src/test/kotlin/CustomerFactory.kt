@@ -1,5 +1,5 @@
 import movie_fee.Customer
-import movie_fee.fee.Sex
+import movie_fee.Sex
 
 object CustomerFactory {
     fun regularAdultMale(): Customer {

@@ -1,7 +1,5 @@
 package movie_fee
 
-import movie_fee.fee.Sex
-
 /**
  * 顧客
  */
