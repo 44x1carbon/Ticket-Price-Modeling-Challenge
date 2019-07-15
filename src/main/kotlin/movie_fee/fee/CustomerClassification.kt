@@ -8,8 +8,8 @@ import movie_fee.StudentCard
  * 顧客区分
  */
 enum class CustomerClassification(
-    val condition: (Customer) -> Boolean
-): Classification {
+    override val condition: (Customer) -> Boolean
+): Classification<Customer> {
     MEMBER({
         MembershipCard::class in it.belongingsList
     }),
@@ -21,5 +21,9 @@ enum class CustomerClassification(
     }),
     HIGH_SCHOOL_STUDENT({
         StudentCard.HighSchoolStudentCard::class in it.belongingsList
-    })
+    });
+
+    companion object {
+        fun filterTargetOnly(t: Customer): List<Classification<Customer>> = values().filter { it.condition(t) }
+    }
 }
