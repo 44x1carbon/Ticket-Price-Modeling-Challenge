@@ -2,6 +2,8 @@ import junit.framework.Assert.assertEquals
 import movie_fee.Order
 import movie_fee.fee.Fee
 import org.junit.Test
+import java.time.LocalDateTime
+import java.time.Month
 
 class OrderTest {
     @Test
@@ -10,7 +12,8 @@ class OrderTest {
             memberList = listOf(
                 CustomerFactory.regularAdultMale()
             ),
-            screening = ScreeningFactory.normalScreening()
+            screening = ScreeningFactory.normalScreening(),
+            orderedAt = LocalDateTime.of(2019, Month.JULY, 16, 12, 0)
         )
 
         assertEquals(Fee(1800U), order.totalFee)
